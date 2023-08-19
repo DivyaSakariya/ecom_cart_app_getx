@@ -4,10 +4,9 @@ class ProductModal {
   final String title;
   final String description;
   final int price;
-
-  // final double discountPercentage;
-  // final double rating;
-  // final int stock;
+  final double discountPercentage;
+  final double rating;
+  final int stock;
   final String brand;
   final String category;
   final String thumbnail;
@@ -18,9 +17,9 @@ class ProductModal {
     required this.title,
     required this.description,
     required this.price,
-    // required this.discountPercentage,
-    // required this.rating,
-    // required this.stock,
+    required this.discountPercentage,
+    required this.rating,
+    required this.stock,
     required this.brand,
     required this.category,
     required this.thumbnail,
@@ -32,9 +31,9 @@ class ProductModal {
       title: data['title'],
       description: data['description'],
       price: data['price'],
-      // discountPercentage: data['discountPercentage'],
-      // rating: data['rating'],
-      // stock: data['stock'],
+      discountPercentage: data['discountPercentage'],
+      rating: data['rating'],
+      stock: data['stock'],
       brand: data['brand'],
       category: data['category'],
       thumbnail: data['thumbnail'],

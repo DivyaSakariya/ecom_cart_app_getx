@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Ecommerce App"),
+        title: const Text("E-Commerce App"),
         centerTitle: true,
         actions: [
           GestureDetector(
