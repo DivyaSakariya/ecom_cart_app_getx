@@ -44,7 +44,8 @@ class HomePage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   ProductModal products = snapshot.data![index];
                   return GestureDetector(
-                    onTap: () => Get.toNamed('/detail_page',arguments: products),
+                    onTap: () =>
+                        Get.toNamed('/detail_page', arguments: products),
                     child: Card(
                       child: ListTile(
                         leading: CircleAvatar(

@@ -7,9 +7,9 @@ import '../../modals/api_modal.dart';
 class CartPage extends StatelessWidget {
   CartPage({super.key});
 
+  CartController cartController = Get.find<CartController>();
   @override
   Widget build(BuildContext context) {
-    CartController cartController = Get.find<CartController>();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Cart"),
@@ -18,9 +18,9 @@ class CartPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(18),
         child: cartController.cartItems.isEmpty
-            ? Center(
+            ? const Center(
                 child: Column(
-                  children: const [
+                  children: [
                     Text("Not Added Any Product Yet"),
                   ],
                 ),
@@ -55,7 +55,8 @@ class CartPage extends StatelessWidget {
                                   ),
                                   Obx(
                                     () {
-                                      return Text("${products.qty}");
+                                      return Text(
+                                          "${cartController.cartItems[index].qty}");
                                     },
                                   ),
                                   TextButton(
@@ -75,7 +76,7 @@ class CartPage extends StatelessWidget {
                                       products: products);
 
                                   cartController.amountUpdate(
-                                      value: -products.price);
+                                      value: -(products.price));
                                 },
                                 icon: const Icon(Icons.delete),
                               ),
@@ -84,7 +85,12 @@ class CartPage extends StatelessWidget {
                         },
                       ),
                     ),
-                    Text("Amount:- ${cartController.totalAmount}"),
+                    Text(
+                      "Amount:- ${cartController.totalAmount}",
+                      style: const TextStyle(
+                        fontSize: 22,
+                      ),
+                    ),
                   ],
                 );
               }),

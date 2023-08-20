@@ -18,21 +18,19 @@ class DetailPage extends StatelessWidget {
     TextStyle priceStyle = const TextStyle(fontSize: 14);
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Detail: ${products.title}"),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Details :- ",
-                style: titleStyle,
-              ),
-              const SizedBox(height: 16),
               Container(
                 alignment: Alignment.center,
                 height: 200,
-                child: Image.network("${products.images}"),
+                child: Image.network("${products.thumbnail}"),
               ),
               const SizedBox(height: 20),
               Text(

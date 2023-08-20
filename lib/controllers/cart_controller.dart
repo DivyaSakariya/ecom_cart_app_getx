@@ -18,6 +18,7 @@ class CartController extends GetxController {
     cartItems[index].qty += value;
     if (cartItems[index].qty < 1) {
       cartItems.removeAt(index);
+      cartItems[index].qty = 1 as RxInt;
     }
     update();
   }
